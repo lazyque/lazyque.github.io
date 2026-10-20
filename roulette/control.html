@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang=ko><script type=module src=/roulette/roulette.8798a40a.js></script><meta charset=UTF-8><meta name=robots content="noindex, nofollow"><meta name=googlebot content="noindex, nofollow"><meta name=viewport content="width=device-width, initial-scale=1"><title>연출 조작</title><style>:root{--bg:#111318;--panel:#1b1e26;--line:#2c313d;--text:#e8eaf0;--muted:#8b92a5;--accent:#dc2626;--accent-text:#fff;--ok:#22c55e}@media (prefers-color-scheme:light){:root{--bg:#f4f5f8;--panel:#fff;--line:#dde0e7;--text:#1a1d24;--muted:#646b7d}}*{box-sizing:border-box}body{background:var(--bg);color:var(--text);margin:0;font:15px/1.5 -apple-system,BlinkMacSystemFont,Apple SD Gothic Neo,Noto Sans KR,sans-serif}main{max-width:480px;margin:0 auto;padding:24px 16px 40px}h1{margin:0 0 4px;font-size:20px}.sub{color:var(--muted);margin:0 0 20px;font-size:13px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;padding:16px}.status{align-items:center;gap:8px;font-weight:600;display:flex}.dot{background:var(--muted);border-radius:50%;flex:none;width:10px;height:10px}.dot.running{background:var(--ok)}.dot.armed{background:var(--accent)}.meta{color:var(--muted);margin-top:4px;font-size:13px}.names{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;display:grid}.names label{border:1px solid var(--line);cursor:pointer;border-radius:8px;align-items:center;gap:8px;padding:8px 10px;display:flex;overflow:hidden}.names label span{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.names label:has(input:checked){border-color:var(--accent)}.names input{accent-color:var(--accent);flex:none}.empty{color:var(--muted)}.actions{gap:8px;display:flex}button{border:1px solid var(--line);color:var(--text);font:inherit;cursor:pointer;background:0 0;border-radius:8px;flex:1;padding:12px;font-weight:600}button.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-text)}button:disabled{opacity:.4;cursor:default}.game-pick{border-top:1px dashed var(--line);flex-direction:column;gap:8px;margin-top:14px;padding-top:12px;display:flex}.game-pick[hidden]{display:none}.game-pick-title{color:var(--muted);font-size:13px;font-weight:600}.game-pick select{border:1px solid var(--line);background:var(--bg);width:100%;color:var(--text);font:inherit;cursor:pointer;border-radius:8px;outline:none;padding:11px 12px;font-size:14px;font-weight:500;line-height:1.4;transition:border-color .15s}.game-pick select:focus{border-color:var(--accent)}.note{color:var(--muted);margin-top:12px;font-size:12px}</style><body>
+<main>
+  <h1>연출 조작</h1>
+  <p class=sub>열려 있는 게임 화면과 연결됩니다. 당첨자를 지정하여 연출을 걸 수 있습니다.</p>
+
+  <section class=panel>
+    <div class=status><span class=dot id=dot></span><span id=status>게임 화면을 찾는 중…</span></div>
+    <div class=meta id=meta></div>
+    <div class=game-pick id=gamePick hidden>
+      <span class=game-pick-title>게임 화면</span>
+      <select id=gameSelect></select>
+    </div>
+  </section>
+
+  <section class=panel>
+    <div class=names id=names><span class=empty>게임 화면에 이름을 입력하면 여기에 나타납니다.</span></div>
+  </section>
+
+  <div class=actions>
+    <button class=primary id=btnArm disabled>연출 걸기</button>
+    <button id=btnCancel disabled>취소</button>
+  </div>
+  <p class=note>지정은 한 판에만 적용됩니다. 판이 끝나면 자동으로 지워집니다. 게임 도중에 걸어도 그 시점부터 적용되지만, 이미 정해진 순위는 바꿀 수 없습니다.</p>
+</main>
+<script type=module src=/roulette/control.ec7122bc.js></script>
+
+

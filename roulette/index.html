@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang=ko><script type=importmap>{"imports":{"10BL3":"/roulette/kkwak.673a610d.png","4ndXK":"/roulette/ff.7fdc9e82.svg","4z6Bu":"/roulette/sample-goal.7ae83caa.svg","6Tk6c":"/roulette/Box2D.simd.99cde7f6.js","6roZe":"/roulette/waldokun.7e88dd59.png","9D9GO":"/roulette/junyoop.d27f0cbf.png","9WkuV":"/roulette/Box2D.b87617eb.js","Snuty":"/roulette/kubin.f3647b70.png","ayl6i":"/roulette/Box2D.simd.dd31b167.wasm","dHr84":"/roulette/sample-logo.63bb71d6.svg","eKRlR":"/roulette/Box2D.b9b16b27.wasm","iU5Ys":"/roulette/chamru.d6926a56.png","jIIlp":"/roulette/sample-qr.f336c03a.svg"}}</script><script type=module src=/roulette/roulette.8798a40a.js></script><meta charset=UTF-8><meta http-equiv=X-UA-Compatible content="ie=edge"><meta name=robots content="noindex, nofollow"><meta name=googlebot content="noindex, nofollow"><title>Marble Roulette™ 마블 룰렛™ - 랜덤 추첨기</title><meta name=viewport content="width=device-width, initial-scale=1.0"><link rel=apple-touch-icon sizes=57x57 href=/roulette/apple-icon-57x57.5ecd1650.png><link rel=apple-touch-icon sizes=60x60 href=/roulette/apple-icon-60x60.b46a75af.png><link rel=apple-touch-icon sizes=72x72 href=/roulette/apple-icon-72x72.4726ed35.png><link rel=apple-touch-icon sizes=76x76 href=/roulette/apple-icon-76x76.72dbc1e1.png><link rel=apple-touch-icon sizes=114x114 href=/roulette/apple-icon-114x114.6cefcd75.png><link rel=apple-touch-icon sizes=120x120 href=/roulette/apple-icon-120x120.462d8e84.png><link rel=apple-touch-icon sizes=144x144 href=/roulette/apple-icon-144x144.36ef70f8.png><link rel=apple-touch-icon sizes=152x152 href=/roulette/apple-icon-152x152.1f1d2b56.png><link rel=apple-touch-icon sizes=180x180 href=/roulette/apple-icon-180x180.33666671.png><link rel=icon type=image/png sizes=192x192 href=/roulette/android-icon-192x192.6c0734fc.png><link rel=icon type=image/png sizes=32x32 href=/roulette/favicon-32x32.b3414860.png><link rel=icon type=image/png sizes=96x96 href=/roulette/favicon-96x96.b086bd80.png><link rel=icon type=image/png sizes=16x16 href=/roulette/favicon-16x16.b88a3ef4.png><link rel=manifest href=/roulette/assets/manifest.webmanifest><meta name=msapplication-TileColor content=#ffffff><meta name=msapplication-TileImage content=/roulette/ms-icon-144x144.e402ee4a.png><meta name=theme-color content=#ffffff><meta name=description content="구슬을 굴려 당첨자를 뽑는 추첨기"><meta property=og:url content=https://lazyque.github.io/roulette/><meta property=og:title content="Marble Race"><meta property=og:description content="구슬을 굴려 당첨자를 뽑는 추첨기"><meta property=og:site_name content=lazyque.github.io><meta property=og:type content=website><link rel=stylesheet href=/roulette/roulette.2ba69855.css><body>
+  <script type=module src=/roulette/roulette.dd434e7f.js></script>
+  <h1 class=sr-only>Marble Race - 랜덤 추첨기</h1>
+  <div id=settings class=settings>
+    <div class=right>
+      <button id=btnToggleSettings class=btn-toggle-settings>
+        <span data-trans>Settings</span>
+        <i class=toggle-arrow>▲</i>
+      </button>
+      <div class="collapsed collapsible-rows">
+        <div class=row>
+          <label for=sltMap>
+            <i class="icon map"></i>
+            <span data-trans>Map</span>
+          </label>
+          <div class=map-picker>
+            <select id=sltMap></select>
+            <button id=btnRemoveMap class=btn-map-action type=button hidden title="Remove this map" data-trans=title>✕</button>
+            <a id=lnkMoreMaps class=btn-map-action href=# title="Get more maps" data-trans=title>+</a>
+          </div>
+        </div>
+        <div class="row row-toggles">
+          <div class=toggle-item>
+            <label for=chkAutoRecording>
+              <i class="icon record"></i>
+              <span data-trans>Recording</span>
+            </label>
+            <input type=checkbox id=chkAutoRecording>
+          </div>
+          <div class=toggle-item>
+            <label for=chkSkill>
+              <i class="bomb icon"></i>
+              <span data-trans>Using skills</span>
+            </label>
+            <input type=checkbox id=chkSkill checked>
+          </div>
+        </div>
+        <div class=row>
+          <label>
+            <i class="icon trophy"></i>
+            <span data-trans>The winner is</span>
+          </label>
+          <div class=btn-group>
+            <button class="active btn-first-winner btn-winner" data-trans>First</button>
+            <button class="btn-last-winner btn-winner" data-trans>Last</button>
+            <input type=number id=in_winningRank value=1 min=1>
+            <button class="btn-multi-winner btn-winner" data-trans>Multiple</button>
+          </div>
+        </div>
+        <div class="row row-range">
+          <label></label>
+          <div class="btn-group range-group">
+            <input type=number id=in_rangeStart value=1 min=1>
+            <span class=range-sep>~</span>
+            <input type=number id=in_rangeEnd value=3 min=1>
+          </div>
+        </div>
+        <div class="row row-theme">
+          <div class=theme>
+            <i class="icon sun"></i>
+            <input type=checkbox id=chkDarkMode checked>
+            <i class="icon moon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class=left>
+      <h3 data-trans>Enter names below</h3>
+      <textarea id=in_names placeholder="Input names separated by commas or line feed here" data-trans=placeholder>수박*2,키위*2,귤*2</textarea>
+      <div class=actions>
+        <button id=btnNotice>
+          <i class="icon megaphone"></i>
+        </button>
+        <a href=https://marblerouletteshop.com target=_blank id=btnShop class=btn title="MarbleRoulette Shop">
+          <i class="icon shop"></i>
+          <span>Shop</span>
+        </a>
+        <button id=btnShuffle>
+          <i class="icon shuffle"></i>
+          <span data-trans>Shuffle</span>
+        </button>
+        <button id=btnStart>
+          <i class="icon play"></i>
+          <span data-trans>Start</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id=notice>
+    <h2>Notice</h2>
+    <div class=notice-body>
+      <h3>맵 공유마당이 열렸습니다</h3>
+      <p>
+        직접 만든 맵을 올리고, 다른 사람이 만든 맵을 받아 마블 룰렛에서 플레이할 수 있습니다.<br>
+        맵은 웹 맵 에디터로 누구나 만들 수 있고, 심사를 거쳐 공개됩니다.
+        받은 맵은 맵 목록의 "다운로드한 맵"에서 고르면 됩니다.<br>
+        <a href=https://marblerouletteshop.com/maps target=_blank>맵 공유마당 둘러보기</a> ·
+        <a href=https://marblerouletteshop.com/map-editor target=_blank>맵 만들기</a>
+      </p>
+    </div>
+    <div class=notice-action>
+      <button id=closeNotice data-trans>Close</button>
+    </div>
+  </div>
+  <div class=copyright>© 2022-2026. 마블 룰렛™ by <a href=https://lazygyu.net target=_blank>lazygyu</a> | <a href=https://marblerouletteshop.com/advertise target=_blank>광고문의</a>
+  </div>
+
+
